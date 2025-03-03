@@ -15,13 +15,12 @@ public class BankAccountTest {
     private static final int INITIAL_DEPOSIT = 1000;
     private static final int FIRST_WITHDRAW = 200;
     private static final int HIGHER_WITHDRAW = 1200;
-    private static final int SILVER_FEE = 1;
 
     private BankAccount account;
 
     @BeforeEach
     void init(){
-        this.account = new BankAccountFactoryImpl().createSilverBankAccount(SILVER_FEE);
+        this.account = new BankAccountFactoryImpl().createSilverBankAccount();
     }
 
     @Test

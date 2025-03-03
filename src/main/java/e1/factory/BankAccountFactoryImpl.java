@@ -9,9 +9,11 @@ import e1.decorator.FeeDecorator;
 
 public class BankAccountFactoryImpl implements BankAccountFactory {
 
+    private static final int SILVER_FEE = 1;
+
     @Override
-    public BankAccount createSilverBankAccount(int fee) {
-        return new CanWithdrawDecorator(new FeeDecorator(new CoreBankAccount(), fee));
+    public BankAccount createSilverBankAccount() {
+        return new CanWithdrawDecorator(new FeeDecorator(SILVER_FEE, new CoreBankAccount()));
     }
 
 }

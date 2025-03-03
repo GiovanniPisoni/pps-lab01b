@@ -8,9 +8,8 @@ public interface BankAccountFactory {
     /**
      * Creates a SilverBankAccount with the specified fee.
      *
-     * @param fee the fee associated with the SilverBankAccount
      * @return a new instance of SilverBankAccount
      */
-    BankAccount createSilverBankAccount(int fee);
+    BankAccount createSilverBankAccount();
 
 }
