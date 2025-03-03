@@ -21,7 +21,7 @@ public class BankAccountTest {
 
     @BeforeEach
     void init(){
-        this.account = new CanWithdrawDecorator(new FeeDecorator(new SilverBankAccount(new CoreBankAccount()), SILVER_FEE));
+        this.account = new CanWithdrawDecorator(new FeeDecorator(new CoreBankAccount(), SILVER_FEE));
     }
 
     @Test
