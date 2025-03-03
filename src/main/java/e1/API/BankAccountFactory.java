@@ -12,4 +12,11 @@ public interface BankAccountFactory {
      */
     BankAccount createSilverBankAccount();
 
+    /**
+     * Creates a GoldBankAccount with the specified fee.
+     *
+     * @return a new instance of GoldBankAccount
+     */
+    BankAccount createGoldBankAccount();
+
 }
