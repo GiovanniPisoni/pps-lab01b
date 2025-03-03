@@ -1,5 +1,8 @@
 package e1;
 
+import e1.decorator.BankAccountDecorator;
+import e1.decorator.CanWithdrawDecorator;
+import e1.decorator.FeeDecorator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,12 +15,13 @@ public class BankAccountTest {
     private static final int INITIAL_DEPOSIT = 1000;
     private static final int FIRST_WITHDRAW = 200;
     private static final int HIGHER_WITHDRAW = 1200;
+    private static final int SILVER_FEE = 1;
 
-    private SilverBankAccount account;
+    private BankAccountDecorator account;
 
     @BeforeEach
     void init(){
-        this.account = new SilverBankAccount(new CoreBankAccount());
+        this.account = new CanWithdrawDecorator(new FeeDecorator(new SilverBankAccount(new CoreBankAccount()), SILVER_FEE));
     }
 
     @Test

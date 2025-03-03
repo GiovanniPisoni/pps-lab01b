@@ -9,8 +9,6 @@ public class CoreBankAccount implements BankAccount {
         this.balance = 0;
     }
 
-
-
     @Override
     public int getBalance() {
         return this.balance;

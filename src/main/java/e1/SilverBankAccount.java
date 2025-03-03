@@ -4,9 +4,9 @@ import e1.API.BankAccount;
 
 public class SilverBankAccount implements BankAccount {
 
-   private final CoreBankAccount base;
+   private final BankAccount base;
 
-    public SilverBankAccount(final CoreBankAccount base) {
+    public SilverBankAccount(final BankAccount base) {
         this.base = base;
     }
 
@@ -22,9 +22,6 @@ public class SilverBankAccount implements BankAccount {
 
     @Override
     public void withdraw(int amount) {
-        if (this.getBalance() < amount){
-            throw new IllegalStateException();
-        }
-        this.base.withdraw(amount + 1);
+        this.base.withdraw(amount);
     }
 }
