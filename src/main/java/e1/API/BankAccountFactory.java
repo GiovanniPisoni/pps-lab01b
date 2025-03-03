@@ -6,6 +6,13 @@ package e1.API;
 public interface BankAccountFactory {
 
     /**
+     * Creates a BronzeBankAccount with the specified fee.
+     *
+     * @return a new instance of BronzeBankAccount
+     */
+    BankAccount createBronzeBankAccount();
+
+    /**
      * Creates a SilverBankAccount with the specified fee.
      *
      * @return a new instance of SilverBankAccount
