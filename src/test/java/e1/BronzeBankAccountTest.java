@@ -11,7 +11,6 @@ public class BronzeBankAccountTest extends AbstractBankAccountTest {
 
     private static final int NO_OVERLIMIT_WITHDRAW = 200;
     private static final int OVERLIMIT_WITHDRAW = 300;
-    private static final int HIGHER_WITHDRAW = 1200;
     private static final short FIRST_EXPECTED_BALANCE = INITIAL_DEPOSIT - NO_OVERLIMIT_WITHDRAW;
     private static final short SECOND_EXPECTED_BALANCE = INITIAL_DEPOSIT - OVERLIMIT_WITHDRAW;
 

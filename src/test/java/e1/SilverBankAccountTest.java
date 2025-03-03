@@ -9,8 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class SilverBankAccountTest extends AbstractBankAccountTest {
 
-    private static final int FIRST_WITHDRAW = 200;
-    private static final int HIGHER_WITHDRAW = 1200;
     private static final short EXPECTED_BALANCE = INITIAL_DEPOSIT - FIRST_WITHDRAW -1;
 
     @BeforeEach

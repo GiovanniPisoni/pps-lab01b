@@ -9,6 +9,8 @@ public abstract class AbstractBankAccountTest {
 
     public static final int EMPTY_BALANCE = 0;
     public static final int INITIAL_DEPOSIT = 1000;
+    public static final int HIGHER_WITHDRAW = 1500;
+    public static final int FIRST_WITHDRAW = 200;
 
     protected BankAccount account;
 
