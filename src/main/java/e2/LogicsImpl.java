@@ -1,5 +1,7 @@
 package e2;
 
+import e2.API.Logics;
+
 import java.util.*;
 
 public class LogicsImpl implements Logics {
@@ -15,7 +17,7 @@ public class LogicsImpl implements Logics {
         this.knight = this.randomEmptyPosition();	
     }
     
-	private final Pair<Integer,Integer> randomEmptyPosition(){
+	private Pair<Integer,Integer> randomEmptyPosition(){
     	Pair<Integer,Integer> pos = new Pair<>(this.random.nextInt(size),this.random.nextInt(size));
     	// the recursive call below prevents clash with an existing pawn
     	return this.pawn!=null && this.pawn.equals(pos) ? randomEmptyPosition() : pos;
@@ -24,7 +26,7 @@ public class LogicsImpl implements Logics {
 	@Override
 	public boolean hit(int row, int col) {
 		if (row<0 || col<0 || row >= this.size || col >= this.size) {
-			throw new IndexOutOfBoundsException();
+			throw new IndexOutOfBoundsException("Position out of bounds");
 		}
 		// Below a compact way to express allowed moves for the knight
 		int x = row-this.knight.getX();
@@ -44,5 +46,20 @@ public class LogicsImpl implements Logics {
 	@Override
 	public boolean hasPawn(int row, int col) {
 		return this.pawn.equals(new Pair<>(row,col));
+	}
+
+	@Override
+	public int getSize() {
+		return this.size;
+	}
+
+	@Override
+	public Pair<Integer, Integer> getPawn() {
+		return this.pawn;
+	}
+
+	@Override
+	public Pair<Integer, Integer> getKnight() {
+		return this.knight;
 	}
 }
